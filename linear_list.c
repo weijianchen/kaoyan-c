@@ -30,10 +30,36 @@ bool insert(SqList *l, int data, int location)
 }
 
 // 删除
+bool delete(SqList *l, int location, int *data)
+{
+    if (location < 1 || location > l->length)
+        return false;
+
+    *data = l->data[location - 1];
+    for (int i = location - 1; i < l->length; i++)
+        l->data[i] = l->data[i + 1];
+    l->length--;
+    return true;
+}
 
 // 定位
+int locate(SqList *l, int data)
+{
+    for (int i = 0; i < l->length - 1; i++)
+    {
+        if (l->data[i] == data)
+            return i + 1;
+    }
+    
+    return 0;
+}
 
 // 单链表定义
+typedef struct LNode
+{
+    int data;
+    struct LNode *next;
+} LNode, *LinkedList;
 
 // 带头结点的尾插法建表
 
