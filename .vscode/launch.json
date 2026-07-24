@@ -1,17 +1,15 @@
 {
     "configurations": [
         {
-            "name": "C/C++: clang build and debug active file",
-            "type": "cppdbg",
+            "name": "使用codelldb调试当前c文件",
+            "type": "lldb",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang build active file"
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}",
+            "terminal": "integrated",
+            "preLaunchTask": "mac环境编译当前c文件而不是构建项目同时编译多个源文件至一个可执行文件"
         }
     ],
     "version": "2.0.0"
